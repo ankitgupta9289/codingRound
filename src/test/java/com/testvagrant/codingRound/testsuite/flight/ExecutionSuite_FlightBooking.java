@@ -6,14 +6,12 @@ import com.testvagrant.codingRound.pageobject.common.SRPPage;
 import com.testvagrant.codingRound.pageobject.flight.FlightsPage;
 import com.testvagrant.codingRound.pageobject.flight.FlightsSRPPage;
 import com.testvagrant.codingRound.testsuite.base.BaseTestClass;
-import com.testvagrant.codingRound.utils.ActionHelper;
 import org.testng.annotations.Test;
 
 public class ExecutionSuite_FlightBooking extends BaseTestClass {
 
     @Test(groups = {"sanity,flight"}, description = "To verify that flights results are shown on SRP page in flight booking one way journey flow")
     public void tc_Flight_001_Verify_ResultsAppearForAOneWayJourney() {
-        ActionHelper.openURL(GlobalData.URL_CLEARTRIP);
         FlightsPage flightsPage = FlightsPage.getInstance();
         flightsPage.click_OneWay_Rd();
         flightsPage.fill_FromCity_Txt(GlobalData.TESTDATA.FLIGHT_FROMCITY());

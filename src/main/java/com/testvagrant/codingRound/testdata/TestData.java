@@ -7,6 +7,8 @@ import org.aeonbits.owner.Config;
 })
 public interface TestData extends Config {
 
+    String BASEURL_CLEARTRIP();
+
     String FLIGHT_FROMCITY();
 
     String FLIGHT_TOCITY();

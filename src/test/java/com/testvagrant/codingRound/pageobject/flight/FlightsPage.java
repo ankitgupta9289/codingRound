@@ -1,5 +1,6 @@
 package com.testvagrant.codingRound.pageobject.flight;
 
+import com.testvagrant.codingRound.logger.Logger;
 import com.testvagrant.codingRound.utils.ActionHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -24,6 +25,7 @@ public class FlightsPage {
     public static FlightsPage getInstance() {
         if (_instance == null)
             _instance = new FlightsPage();
+        Logger.logPass("On Flight Booking Page");
         return _instance;
     }
 

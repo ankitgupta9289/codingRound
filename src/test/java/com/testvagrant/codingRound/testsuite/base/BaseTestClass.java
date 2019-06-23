@@ -1,8 +1,11 @@
 package com.testvagrant.codingRound.testsuite.base;
 
+import com.testvagrant.codingRound.global.GlobalData;
 import com.testvagrant.codingRound.listeners.TestNGReportListener;
+import com.testvagrant.codingRound.utils.ActionHelper;
 import com.testvagrant.codingRound.utils.GenericFunction;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 
@@ -22,6 +25,11 @@ public class BaseTestClass {
         System.out.println("--------------------- INSIDE AFTER SUITE ---------------------");
         GenericFunction.addExecutionDetailsExtentReport();
         GenericFunction.quitDrivers();
+    }
+
+    @BeforeMethod(alwaysRun = true)
+    public void beforeMethod() {
+        ActionHelper.openURL(GlobalData.TESTDATA.BASEURL_CLEARTRIP());
     }
 
 }

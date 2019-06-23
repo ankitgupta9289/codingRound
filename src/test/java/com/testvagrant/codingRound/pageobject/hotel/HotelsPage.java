@@ -1,5 +1,6 @@
 package com.testvagrant.codingRound.pageobject.hotel;
 
+import com.testvagrant.codingRound.logger.Logger;
 import com.testvagrant.codingRound.utils.ActionHelper;
 import com.testvagrant.codingRound.utils.DriverManager;
 import org.openqa.selenium.By;
@@ -26,6 +27,7 @@ public class HotelsPage {
     public static HotelsPage getInstance() {
         if (_instance == null)
             _instance = PageFactory.initElements(DriverManager.getDriver(), HotelsPage.class);
+        Logger.logPass("On Hotel Booking Page");
         return _instance;
     }
 

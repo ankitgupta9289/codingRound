@@ -7,7 +7,6 @@ public class GlobalData {
 
     public static final int ELEMENT_TIMEOUT = 20;
     public static final int DEFAULT_IMPLICITWAIT = 20;
-    public static final String URL_CLEARTRIP = "https://www.cleartrip.com/";
     public static final TestData TESTDATA;
     public static final String EXTENTREPORT_DOCUMENT_TITLE = "Automation Reports";
     public static final String EXTENTREPORT_REPORT_NAME = "ClearTrip";

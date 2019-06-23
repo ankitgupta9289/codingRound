@@ -15,14 +15,8 @@ public class ActionHelper {
     public static void openURL(String url) {
         DriverManager.getDriver().get(url);
         Logger.logPass("Opening Url : " + url);
-        gotoSleep(3000);
     }
 
-    public static void quitDriver() {
-        DriverManager.getDriver().quit();
-        Logger.logPass("Closing Browser !!");
-        gotoSleep(1000);
-    }
 
     public static void gotoSleep(int miliSeconds) {
         try {

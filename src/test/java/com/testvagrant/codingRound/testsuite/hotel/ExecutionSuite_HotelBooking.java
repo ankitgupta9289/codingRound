@@ -7,14 +7,12 @@ import com.testvagrant.codingRound.pageobject.common.SRPPage;
 import com.testvagrant.codingRound.pageobject.hotel.HotelsPage;
 import com.testvagrant.codingRound.pageobject.hotel.HotelsSRPPage;
 import com.testvagrant.codingRound.testsuite.base.BaseTestClass;
-import com.testvagrant.codingRound.utils.ActionHelper;
 import org.testng.annotations.Test;
 
 public class ExecutionSuite_HotelBooking extends BaseTestClass {
 
     @Test(groups = {"sanity,hotel"}, description = "To verify that hotel results are shown on SRP page in hotel booking flow")
     public void tc_Hotel_001_VerifyVisibility_SearchResults_SearchHotelsFlow() {
-        ActionHelper.openURL(GlobalData.URL_CLEARTRIP);
         ClearTripHomePage clearTripHomePage = ClearTripHomePage.getInstance();
         clearTripHomePage.click_HotelsLink_Lnk();
         HotelsPage hotelsPage = HotelsPage.getInstance();

@@ -1,5 +1,6 @@
 package com.testvagrant.codingRound.pageobject.hotel;
 
+import com.testvagrant.codingRound.logger.Logger;
 import com.testvagrant.codingRound.pageobject.common.SRPPage;
 import com.testvagrant.codingRound.utils.ActionHelper;
 import org.openqa.selenium.By;
@@ -16,6 +17,7 @@ public class HotelsSRPPage extends SRPPage {
     public static HotelsSRPPage getInstance() {
         if (_instance == null)
             _instance = new HotelsSRPPage();
+        Logger.logPass("On Hotel SRP Page");
         return _instance;
     }
 

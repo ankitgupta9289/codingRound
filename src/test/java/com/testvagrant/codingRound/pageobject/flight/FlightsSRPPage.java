@@ -1,5 +1,6 @@
 package com.testvagrant.codingRound.pageobject.flight;
 
+import com.testvagrant.codingRound.logger.Logger;
 import com.testvagrant.codingRound.pageobject.common.SRPPage;
 import com.testvagrant.codingRound.utils.ActionHelper;
 import org.openqa.selenium.By;
@@ -16,6 +17,7 @@ public class FlightsSRPPage extends SRPPage {
     public static FlightsSRPPage getInstance() {
         if (_instance == null)
             _instance = new FlightsSRPPage();
+        Logger.logPass("On Flight SRP Page");
         return _instance;
     }
 

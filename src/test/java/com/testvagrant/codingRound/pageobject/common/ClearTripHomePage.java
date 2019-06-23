@@ -1,5 +1,6 @@
 package com.testvagrant.codingRound.pageobject.common;
 
+import com.testvagrant.codingRound.logger.Logger;
 import com.testvagrant.codingRound.utils.ActionHelper;
 import org.openqa.selenium.By;
 
@@ -14,6 +15,7 @@ public class ClearTripHomePage {
     public static ClearTripHomePage getInstance() {
         if (_instance == null)
             _instance = new ClearTripHomePage();
+        Logger.logPass("On ClearTrip HomePage");
         return _instance;
     }
 
