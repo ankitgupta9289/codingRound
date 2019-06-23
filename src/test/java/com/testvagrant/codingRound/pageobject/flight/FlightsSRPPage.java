@@ -9,6 +9,10 @@ public class FlightsSRPPage extends SRPPage {
     private static FlightsSRPPage _instance = null;
     private By searchResultsTuples_We = By.xpath("//ul[@class='listView flights']/li");
 
+    private FlightsSRPPage() {
+
+    }
+
     public static FlightsSRPPage getInstance() {
         if (_instance == null)
             _instance = new FlightsSRPPage();

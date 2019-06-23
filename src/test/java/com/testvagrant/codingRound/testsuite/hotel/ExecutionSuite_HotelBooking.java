@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 public class ExecutionSuite_HotelBooking extends BaseTestClass {
 
-    @Test(groups = {"sanity,login"}, description = "To verify that hotel results are shown on SRP page in hotel booking flow")
+    @Test(groups = {"sanity,hotel"}, description = "To verify that hotel results are shown on SRP page in hotel booking flow")
     public void tc_Hotel_001_VerifyVisibility_SearchResults_SearchHotelsFlow() {
         ActionHelper.openURL(GlobalData.URL_CLEARTRIP);
         ClearTripHomePage clearTripHomePage = ClearTripHomePage.getInstance();

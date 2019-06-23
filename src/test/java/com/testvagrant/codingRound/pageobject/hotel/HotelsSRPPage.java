@@ -9,6 +9,10 @@ public class HotelsSRPPage extends SRPPage {
     private static HotelsSRPPage _instance = null;
     private By searchResultsTuples_We = By.xpath("//nav[@class='hotelsList']/ul/li");
 
+    private HotelsSRPPage() {
+
+    }
+
     public static HotelsSRPPage getInstance() {
         if (_instance == null)
             _instance = new HotelsSRPPage();

@@ -16,9 +16,10 @@ public class FlightsPage {
     private By highlightedDate_Calendar_WE = By.xpath("//a[contains(@class,'ui-state-highlight')]");
     private By adults_Dd = By.id("Adults");
     private By searchFlights_Btn = By.id("SearchBtn");
-    //private By month_Calendar_Lbl = By.xpath("//div[@class='monthBlock first']//span[@class='ui-datepicker-month']");
-    //private By month_Calendar_Lbl = By.xpath("//div[@class='monthBlock first']//span[@class='ui-datepicker-month']");
 
+    private FlightsPage() {
+
+    }
 
     public static FlightsPage getInstance() {
         if (_instance == null)

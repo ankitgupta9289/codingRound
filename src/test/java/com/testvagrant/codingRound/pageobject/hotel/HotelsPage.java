@@ -13,20 +13,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class HotelsPage {
 
     private static HotelsPage _instance = null;
-    @FindBy(id = "Tags")
-    public WebElement locality_Txt;
-
-    @FindBy(id = "SearchHotelsButton")
-    public WebElement search_Btn;
-
-    @FindBy(id = "travellersOnhome")
-    public WebElement travellers_dd;
-
-    @FindBy(xpath = "//h1[text()='Search for hotels']")
-    public WebElement searchForHotels_Lbl;
-
     String autoSuggestTuples_We = "//ul[@id='ui-id-1']//a[contains(text(),'xyz')]";
-
+    @FindBy(id = "Tags")
+    private WebElement locality_Txt;
+    @FindBy(id = "SearchHotelsButton")
+    private WebElement search_Btn;
+    @FindBy(id = "travellersOnhome")
+    private WebElement travellers_dd;
+    @FindBy(xpath = "//h1[text()='Search for hotels']")
+    private WebElement searchForHotels_Lbl;
 
     public static HotelsPage getInstance() {
         if (_instance == null)
