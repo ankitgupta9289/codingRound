@@ -1,7 +1,6 @@
 package com.testvagrant.codingRound.testsuite.base;
 
 import com.testvagrant.codingRound.listeners.TestNGReportListener;
-import com.testvagrant.codingRound.utils.DriverManager;
 import com.testvagrant.codingRound.utils.GenericFunction;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -21,7 +20,8 @@ public class BaseTestClass {
     @AfterSuite(alwaysRun = true)
     public void afterSuite() {
         System.out.println("--------------------- INSIDE AFTER SUITE ---------------------");
-        DriverManager.quitDriver();
+        GenericFunction.addExecutionDetailsExtentReport();
+        GenericFunction.quitDrivers();
     }
 
 }

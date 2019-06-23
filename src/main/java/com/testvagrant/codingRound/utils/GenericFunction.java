@@ -3,12 +3,13 @@ package com.testvagrant.codingRound.utils;
 import com.testvagrant.codingRound.extentreports.ExtentManager;
 import com.testvagrant.codingRound.global.GlobalData;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.File;
 
 public class GenericFunction {
 
-    public static synchronized void initDrivers(){
+    public static synchronized void initDrivers() {
         DriverManager.startDriver();
     }
 
@@ -27,5 +28,14 @@ public class GenericFunction {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static synchronized void addExecutionDetailsExtentReport() {
+        ExtentManager.addSystemInfo("Environment", StringUtils.capitalize(GlobalData.ENVIRONMENT));
+        ExtentManager.addSystemInfo("DriverType", StringUtils.capitalize(GlobalData.DRIVERTYPE));
+    }
+
+    public static synchronized void quitDrivers() {
+        DriverManager.getDriver().quit();
     }
 }

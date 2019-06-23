@@ -25,8 +25,8 @@ public class ExtentManager {
     public synchronized static ExtentReports createInstance() {
         ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(GlobalData.OUTPUT_FOLDER_REPORT + GlobalData.FILE_NAME_REPORT);
         htmlReporter.config().setTheme(Theme.STANDARD);
-        htmlReporter.config().setReportName(GlobalData.EXTENTREPORT_REPORTNAME);
-        htmlReporter.config().setDocumentTitle(GlobalData.EXTENTREPORT_DOCUMENTTITLE);
+        htmlReporter.config().setReportName(GlobalData.EXTENTREPORT_REPORT_NAME);
+        htmlReporter.config().setDocumentTitle(GlobalData.EXTENTREPORT_DOCUMENT_TITLE);
         htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
         htmlReporter.config().setChartVisibilityOnOpen(true);
         htmlReporter.config().setEncoding(GlobalData.REPORT_ENCODING);

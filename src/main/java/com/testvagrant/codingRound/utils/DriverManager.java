@@ -24,7 +24,7 @@ public class DriverManager {
     public static void startDriver() {
         WebDriver driver = null;
 
-        if (GlobalData.driverType.equalsIgnoreCase("Chrome")) {
+        if (GlobalData.DRIVERTYPE.equalsIgnoreCase("chrome")) {
             System.out.println("--------Starting Chrome Driver-------");
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
@@ -32,7 +32,7 @@ public class DriverManager {
             driver.manage().window().maximize();
         }
 
-        if (GlobalData.driverType.equalsIgnoreCase("Firefox")) {
+        if (GlobalData.DRIVERTYPE.equalsIgnoreCase("firefox")) {
             System.out.println("--------Starting Firefox Driver-------");
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();

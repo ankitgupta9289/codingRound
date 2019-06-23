@@ -3,7 +3,7 @@ package com.testvagrant.codingRound.testdata;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "file:src/main/resources/testdata/production/Testdata.properties"
+        "file:src/main/resources/testdata/${env}/Testdata.properties"
 })
 public interface TestData extends Config {
 
