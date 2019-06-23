@@ -13,20 +13,20 @@ public class CustomAssert {
 
     public static void assertTrue(boolean condition, String message) {
         Assert.assertTrue(condition, message);
-        Logger.logPass(message + " = <b>Pass</b>");
+        Logger.logInfo(message + " = <b>Pass</b>");
     }
 
     public static void assertEquals(String actual, String expected, String message) {
         Assert.assertEquals(actual, expected, message);
         String str = message + "<br><b>Actual : </b>" + actual + "<br><b>Expected : </b>" + expected;
-        Logger.logPass(str);
+        Logger.logInfo(str);
     }
 
     public static void assertContains(String completeString, String subString, String message) {
         String str = message + "<br><b>Complete String : </b>" + completeString + "<br><b>Substring : </b>" + subString;
         String errorMessage = message + " -- \nComplete String : " + completeString + "\nSubstring : " + subString + "\n\n";
         Assert.assertTrue(completeString.contains(subString), errorMessage);
-        Logger.logPass(str);
+        Logger.logInfo(str);
     }
 
 

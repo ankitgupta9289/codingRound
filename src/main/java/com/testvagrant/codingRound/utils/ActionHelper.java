@@ -14,13 +14,13 @@ public class ActionHelper {
 
     public static void openURL(String url) {
         DriverManager.getDriver().get(url);
-        Logger.logPass("Opening Url : " + url);
+        Logger.logInfo("Opening Url : " + url);
         gotoSleep(3000);
     }
 
     public static void quitDriver() {
         DriverManager.getDriver().quit();
-        Logger.logPass("Closing Browser !!");
+        Logger.logInfo("Closing Browser !!");
         gotoSleep(1000);
     }
 
@@ -35,10 +35,10 @@ public class ActionHelper {
     public static void click(By by) {
         try {
             findElement(by).click();
-            Logger.logPass("Click with Selenium on = " + getCallingMethodName());
+            Logger.logInfo("Click with Selenium on = " + getCallingMethodName());
         } catch (Exception e) {
             clickJS(by);
-            Logger.logPass("Click with Javascript on = " + getCallingMethodName());
+            Logger.logInfo("Click with Javascript on = " + getCallingMethodName());
         }
     }
 
@@ -72,7 +72,7 @@ public class ActionHelper {
             return;
         findElement(by).click();
         findElement(by).sendKeys(input);
-        Logger.logPass("Fill Text Box = " + getCallingMethodName() + ", with value = " + input);
+        Logger.logInfo("Fill Text Box = " + getCallingMethodName() + ", with value = " + input);
     }
 
     public static void selectValueFromDropDown(By by, String value) {
@@ -111,7 +111,7 @@ public class ActionHelper {
 
     public static String getText(By by) {
         String text = findElement(by).getText();
-        Logger.logPass("Fetching value of " + getCallingMethodName() + " [ " + text + " ]");
+        Logger.logInfo("Fetching value of " + getCallingMethodName() + " [ " + text + " ]");
         return text;
     }
 

@@ -13,19 +13,15 @@ public class ExecutionSuite_FlightBooking extends BaseTestClass {
 
     @Test(groups = {"sanity,flight"}, description = "To verify that flights results are shown on SRP page in flight booking one way journey flow")
     public void tc_Flight_001_Verify_ResultsAppearForAOneWayJourney() {
-        String fromCity = "Bangalore";
-        String toCity = "Delhi";
-        String departureDate = "29/11/2019";
-        String noOfAdults = "2";
         ActionHelper.openURL(GlobalData.URL_CLEARTRIP);
         FlightsPage flightsPage = FlightsPage.getInstance();
         flightsPage.click_OneWay_Rd();
-        flightsPage.fill_FromCity_Txt(fromCity);
+        flightsPage.fill_FromCity_Txt(GlobalData.TESTDATA.FLIGHT_FROMCITY());
         flightsPage.click_FirstTuple_AutoComplete_FromCity_We();
-        flightsPage.fill_ToCity_Txt(toCity);
+        flightsPage.fill_ToCity_Txt(GlobalData.TESTDATA.FLIGHT_TOCITY());
         flightsPage.click_FirstTuple_AutoComplete_ToCity_We();
-        flightsPage.fill_DepartureDate_WE(departureDate);
-        flightsPage.select_Adults_Dd(noOfAdults);
+        flightsPage.fill_DepartureDate_WE(GlobalData.TESTDATA.FLIGHT_DEPARTUREDATE());
+        flightsPage.select_Adults_Dd(GlobalData.TESTDATA.FLIGHT_NOOFADULTS());
         flightsPage.click_SearchFlights_Btn();
         SRPPage srpPage = FlightsSRPPage.getInstance();
         CustomAssert.assertTrue(srpPage.isPresent_SearchSummary_Lbl(), "Check visibility of search summary label on SRP");
