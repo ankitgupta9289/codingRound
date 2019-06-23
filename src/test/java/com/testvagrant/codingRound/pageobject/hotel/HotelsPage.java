@@ -22,6 +22,9 @@ public class HotelsPage {
     @FindBy(id = "travellersOnhome")
     public WebElement travellers_dd;
 
+    @FindBy(xpath = "//h1[text()='Search for hotels']")
+    public WebElement searchForHotels_Lbl;
+
     String autoSuggestTuples_We = "//ul[@id='ui-id-1']//a[contains(text(),'xyz')]";
 
 
@@ -45,6 +48,10 @@ public class HotelsPage {
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), 20);
         wait.until(ExpectedConditions.visibilityOf(search_Btn)).click();
         //search_Btn.click();
+    }
+
+    public void click_SearchForHotels_Lbl() {
+        searchForHotels_Lbl.click();
     }
 
     public void select_Travellers_Dd(String travellers) {

@@ -16,7 +16,7 @@ public class LoginLayer {
     public static LoginLayer getInstance() {
         if (_instance == null)
             _instance = new LoginLayer();
-        _instance.swithToLoginLayerFrame();
+        _instance.switchToLoginLayerFrame();
         return _instance;
     }
 
@@ -24,7 +24,7 @@ public class LoginLayer {
         ActionHelper.click(signIn_Btn);
     }
 
-    public void swithToLoginLayerFrame() {
+    public void switchToLoginLayerFrame() {
         ActionHelper.swtichToFrame(frameIDLoginLayer);
     }
 

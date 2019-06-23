@@ -1,11 +1,12 @@
 package com.testvagrant.codingRound.testsuite.flight;
 
-import com.testvagrant.codingRound.utils.ActionHelper;
 import com.testvagrant.codingRound.assertion.CustomAssert;
 import com.testvagrant.codingRound.global.GlobalData;
+import com.testvagrant.codingRound.pageobject.common.SRPPage;
 import com.testvagrant.codingRound.pageobject.flight.FlightsPage;
 import com.testvagrant.codingRound.pageobject.flight.FlightsSRPPage;
 import com.testvagrant.codingRound.testsuite.base.BaseTestClass;
+import com.testvagrant.codingRound.utils.ActionHelper;
 import org.testng.annotations.Test;
 
 public class ExecutionSuite_FlightBooking extends BaseTestClass {
@@ -26,8 +27,9 @@ public class ExecutionSuite_FlightBooking extends BaseTestClass {
         flightsPage.fill_DepartureDate_WE(departureDate);
         flightsPage.select_Adults_Dd(noOfAdults);
         flightsPage.click_SearchFlights_Btn();
-        FlightsSRPPage flightsSRPPage = FlightsSRPPage.getInstance();
-        CustomAssert.assertTrue(flightsSRPPage.isPresent_SearchResultsTuples_We(), "Check results are displayed on search results page");
+        SRPPage srpPage = FlightsSRPPage.getInstance();
+        CustomAssert.assertTrue(srpPage.isPresent_SearchSummary_Lbl(), "Check visibility of search summary label on SRP");
+        CustomAssert.assertTrue(srpPage.isPresent_SearchResultsTuples_We(), "Check results are displayed on SRP");
     }
 
 }
