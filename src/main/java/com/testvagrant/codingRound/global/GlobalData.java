@@ -8,7 +8,7 @@ public class GlobalData {
     public static final int ELEMENT_TIMEOUT = 20;
     public static final int DEFAULT_IMPLICITWAIT = 20;
     public static final String URL_CLEARTRIP = "https://www.cleartrip.com/";
-    public static final TestData TESTDATA = ConfigFactory.create(TestData.class);
+    public static final TestData TESTDATA;
     public static final String EXTENTREPORT_DOCUMENT_TITLE = "Automation Reports";
     public static final String EXTENTREPORT_REPORT_NAME = "ClearTrip";
     public static final String OUTPUT_FOLDER_REPORT = "extentreport/";
@@ -20,5 +20,6 @@ public class GlobalData {
 
     static {
         ConfigFactory.setProperty("env", GlobalData.ENVIRONMENT);
+        TESTDATA = ConfigFactory.create(TestData.class);
     }
 }
