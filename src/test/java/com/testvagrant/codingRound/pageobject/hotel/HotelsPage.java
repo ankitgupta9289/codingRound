@@ -7,9 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HotelsPage {
 
@@ -32,8 +30,7 @@ public class HotelsPage {
     }
 
     public void fill_Locality_Txt(String locality) {
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), 20);
-        wait.until(ExpectedConditions.visibilityOf(locality_Txt)).sendKeys(locality);
+        locality_Txt.sendKeys(locality);
     }
 
     public void click_AuoSuggestTuple_We(String locality) {
@@ -42,9 +39,7 @@ public class HotelsPage {
     }
 
     public void click_SearchHotels_Btn() {
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), 20);
-        wait.until(ExpectedConditions.visibilityOf(search_Btn)).click();
-        //search_Btn.click();
+        search_Btn.click();
     }
 
     public void click_SearchForHotels_Lbl() {
@@ -52,8 +47,6 @@ public class HotelsPage {
     }
 
     public void select_Travellers_Dd(String travellers) {
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), 20);
-        wait.until(ExpectedConditions.visibilityOf(travellers_dd));
         new Select(travellers_dd).selectByVisibleText(travellers);
     }
 }

@@ -1,30 +1,33 @@
-# TestVagrant hiring challenge for applicants 
+# TestVagrant hiring challenge
 
-About the codebase:
+**Code review comments**
 ---------------------------------
-*This is a simple test project for testing a few scenarios on a sample flight/hotel booking website. There are **3 tests** in total spread over 3 test classes. Following tech stack has been used to develop the same.*
+1. No proper naming convention followed.
+2. No design pattern and framework (for ex. Page Object Pattern) followed.
+3. Element identifiers were directly used in line hence no re-usability.
+4. Chrome drivers for all OS were added in the code repository they get updated on frequent basis.
+5. Hard waits were used Thread.sleep at many places.
+6. Xpath writing strategies are not good they are very prone to break easily.
+7. Webdriver is created and destroyed after every test it increases execution time so reuse same driver again.
+8. isElementPresent method does not confirm the visibility of element.
+9. Test data is directly used anywhere in the tests whereas there should be some common csv or properties file to store the same. 
+10. No use of implicit wait while initializing driver. 
 
-**Tech Stack:** *Java*  *Selenium* *TestNG*  *Gradle/Maven*
-
-**The parameters of evaluation**
+**Code Enhancements**
 ----------------------------------
-1. Naming Conventions & readability of code
-2. Modularization & Abstraction
-3. Demonstration of OO concepts & Design Patterns
-4. Etiquette of Version control
+1. Proper naming conventions are followed and fixes are done to make tests pass.
+2. Page object pattern is used to achieve better re-usability, maintainability and readability.
+3. Some classes are also using page factory pattern just to demonstrate the use.
+4. Singleton design pattern is used for page object classes.
+5. Extent reports are used to generate fancy html reports.
+6. Auto screenshot capture functionality implemented on test failure.
+7. Maven TestNG Surefire plugin is used to execute through commandline.
+8. Inheritance and Abstraction is used where ever required.
+9. Hard waits are completely avoided by using explicit wait.
+10. Bonigarcia webdrivermanager library is used so as to remove hassle of downloading chromedriver and geckodriver and set system path.
+11. Support is given to run of firefox driver as well.
 
-Problem Statement
+**NOTE :-**
 ----------------------------------
-**Tasks:**
-
-1. Test are failing which needs your expertise to fix it.
-2. Review and point out design issues with the current codebase/framework, if any.
-3. Improve/refactor the code to implement your suggestions.
-
-**Expectation:**
-1. Create a GitHub account if not existing already.
-2. Fork this repo (DO NOT CLONE).
-3. Fix the errors and refactor the code, consider **abstractions, reusability and maintenance.**
-4. Make sure you make multiple check-ins in the process, we would love to see your progress bit by bit.
-5. Also check-in a separate file where you should list all your code review comments.
-6. Send us the link of your GitHub repo to **careers@testvagrant.com**. Also attach your **resume**.
+1. Parallel execution is not implement as we had only 3 cases however that can easily be done by using threadlocal driver and IInvokedMethodListener.
+2. Retry mechanism for failed cases not implemented that can be easily done using IRetryAnalyser.
